@@ -1,5 +1,5 @@
 onMapSingleClick "";
-deleteMarker "helpSquad";
+deleteMarker "LShelpSquad";
 
 _vrX = _this select 0,
 _vrY = _this select 1,
@@ -13,10 +13,10 @@ sleep 2;
 _brushX = _vrX + (50 * (sin _DIR));
 _brushY = _vrY + (50 * (cos _DIR));
 
-_hlpSq = createMarker ["helpSquad", [_brushX, _brushY]];
+_hlpSq = createMarker ["LShelpSquad", [_brushX, _brushY]];
 _hlpSq setMarkerType "hd_arrow";
 _hlpSq setMarkerDir _DIR + 180;
-_hlpSq setMarkerColor "ColorGreen";
+_hlpSq setMarkerColor "colorIndependent";
 
 _brushX = _vrX + ((random 250 + 500) * (sin _DIR));
 _brushY = _vrY + ((random 250 + 500) * (cos _DIR));

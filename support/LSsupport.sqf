@@ -1,10 +1,15 @@
 //АРТА
-_arta = createTrigger ["emptyDetector", [0,0,0]];
-_arta setTriggerActivation ["ALPHA", "PRESENT", false];
-_arta setTriggerText "Артобстрел";
-_arta setTriggerStatements ["this", "onMapSingleClick {_pos execVM 'arta.sqf'}",""];
+_LSarta = createTrigger ["emptyDetector", [0,0,0]];
+_LSarta setTriggerActivation ["ALPHA", "PRESENT", false];
+_LSarta setTriggerText "Артобстрел";
+_LSarta setTriggerStatements ["this", "onMapSingleClick {_pos execVM 'LSarta.sqf'}",""];
 //Поддержка
-_btlSq = createTrigger ["emptyDetector", [0,0,0]];
-_btlSq setTriggerActivation ["BRAVO", "PRESENT", false];
-_btlSq setTriggerText "Диверсия";
-_btlSq setTriggerStatements ["this", "onMapSingleClick {_pos execVM 'b_sq.sqf'}",""];
+_LSbtlSq = createTrigger ["emptyDetector", [0,0,0]];
+_LSbtlSq setTriggerActivation ["BRAVO", "PRESENT", false];
+_LSbtlSq setTriggerText "Диверсия";
+_LSbtlSq setTriggerStatements ["this", "onMapSingleClick {_pos execVM 'LSb_sq.sqf'}",""];
+//Вызов машины
+_LSgetCar = createTrigger ["emptyDetector", [0,0,0]];
+_LSgetCar setTriggerActivation ["CHARLIE", "PRESENT", false];
+_LSgetCar setTriggerText "Запросить машину";
+_LSgetCar setTriggerStatements ["this", "execVM 'LSgetCar.sqf'",""];

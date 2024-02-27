@@ -1,5 +1,5 @@
 onMapSingleClick "";
-_target = createMarker ["target", _this];
+_target = createMarker ["LSarta", _this];
 _target setMarkerType "hd_objective";
 _target setMarkerColor "ColorBlack";
 
@@ -22,4 +22,4 @@ for "_i" from 1 to 6 do {
 	_bomb = createVehicle ["Bo_Mk82",  _this, [], 50];
 	sleep 1.2;
 };
-deleteMarker "target";
+deleteMarker "LSarta";
