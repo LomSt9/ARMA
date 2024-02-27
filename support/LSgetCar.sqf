@@ -1,4 +1,3 @@
-_vrDIR = random 360;
 _vrX = getPos player select 0;
 _vrY = getPos player select 1;
 
@@ -7,17 +6,20 @@ player sideChat format ["Запрашиваю машину в квадрат %1-
 
 sleep 5;
 
-_brushX = _vrX + ((200 + random 500) * sin _vrDIR);
-_brushY = _vrY + ((200 + random 500) * sin _vrDIR);
-_car = "C_Offroad_01_F" createVehicle [_brushX, _brushY];
-_car setDir random 360;
-_car setFuel (random 50) + 20;
+_carPos = ((selectBestPlaces [[_vrX, _vrY], 800, "trees", 1,1]) select 0 select 0);
 
-_hlpSq = createMarker ["LShelpCar", [_brushX, _brushY]];
+_vrX = _carPos select 0;
+_vrY = _carPos select 1;
+
+_car = "C_Offroad_01_F" createVehicle [_vrX, _vrY, 0.5];
+_car setDir random 360;
+_car setFuel (random 0.5) + 0.2;
+
+_hlpSq = createMarker ["LShelpCar", _carPos];
 _hlpSq setMarkerType "loc_car";
 _hlpSq setMarkerColor "colorIndependent";
 
-hint format ["Машина доставлена по координатам %1-%2", (floor( _brushX / 100)), (floor (_brushY / 100))];
+hint format ["Машина доставлена по координатам %1-%2", (floor(_vrX / 100)), (floor (_vrY / 100))];
 
 sleep 15;
 _LSmarkA = 1;
